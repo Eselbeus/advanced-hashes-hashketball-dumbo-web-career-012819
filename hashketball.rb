@@ -120,20 +120,20 @@ def game_hash
   
 end
 
-# def num_points_scored(player_name)
-#   game_hash[:home][:players].each do |player, stats|
-#     if player_name == player 
-#       return game_hash[:home][:players][player][:points]
-#     end
-#   end
+def num_points_scored(player_name)
+  game_hash[:home][:players].each do |player, stats|
+    if player_name == player 
+      return game_hash[:home][:players][player][:points]
+    end
+  end
   
-#   game_hash[:away][:players].each do |player, stats|
-#     if player_name == player 
-#       return game_hash[:away][:players][player][:points]
-#     end
-#   end
+  game_hash[:away][:players].each do |player, stats|
+    if player_name == player 
+      return game_hash[:away][:players][player][:points]
+    end
+  end
   
-# end
+end
 
 def num_points_scored(player_name)
   game_hash.each do |team, stats|
