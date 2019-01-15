@@ -120,19 +120,31 @@ def game_hash
   
 end
 
+# def num_points_scored(player_name)
+#   game_hash[:home][:players].each do |player, stats|
+#     if player_name == player 
+#       return game_hash[:home][:players][player][:points]
+#     end
+#   end
+  
+#   game_hash[:away][:players].each do |player, stats|
+#     if player_name == player 
+#       return game_hash[:away][:players][player][:points]
+#     end
+#   end
+  
+# end
+
 def num_points_scored(player_name)
-  game_hash[:home][:players].each do |player, stats|
-    if player_name == player 
-      return game_hash[:home][:players][player][:points]
+  game_hash.each do |team, stats|
+    binding.pry
+    team[:players].each do |player, stat|
+
+      if player_name == player
+        return player[:points]
+      end
     end
   end
-  
-  game_hash[:away][:players].each do |player, stats|
-    if player_name == player 
-      return game_hash[:away][:players][player][:points]
-    end
-  end
-  
 end
 
 def shoe_size(player_name)
@@ -213,7 +225,6 @@ def big_shoe_rebounds
     player_largest_shoes = player_largest_away
     return game_hash[:away][:player][player_largest_shoes][:rebounds]
   end
-  
 end
 
 
