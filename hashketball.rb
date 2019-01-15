@@ -135,17 +135,17 @@ def num_points_scored(player_name)
   
 end
 
-def num_points_scored(player_name)
-  game_hash.each do |team, stats|
-    binding.pry
-    team[:players].each do |player, stat|
+# def num_points_scored(player_name)
+#   game_hash.each do |team, stats|
+#     binding.pry
+#     team[:players].each do |player, stat|
 
-      if player_name == player
-        return player[:points]
-      end
-    end
-  end
-end
+#       if player_name == player
+#         return player[:points]
+#       end
+#     end
+#   end
+# end
 
 def shoe_size(player_name)
   game_hash[:home][:players].each do |player, stats|
